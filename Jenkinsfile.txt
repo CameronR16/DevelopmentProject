@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage("Clean Up"){
+            steps {
+                deleteDir()
+            }
+        }
         stage("Checkout") {
             steps{
                 sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
