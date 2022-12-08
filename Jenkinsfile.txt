@@ -1,7 +1,30 @@
 pipeline {
     agent any
-    
-    stages{
-        
+    stages {
+        stage("Checkout") {
+            steps{
+                sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
+            }
+        }
+
+        stage("terraform init") {
+
+            steps{
+
+                sh ("terraform init")
+
+            }
+
+        }
+
+        stage("terraform Action") {
+
+            steps {
+
+                echo "Terraform action is –> ${action}"
+                sh ("terraform ${action} –auto-approve")
+            }
+        }
     }
+
 }
