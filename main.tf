@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "test_rg" {
-  name     = "Testforstateconfig"
+  name     = "Testforstateconfigpipeline"
   location = "uk south"
 }
