@@ -15,6 +15,7 @@ pipeline {
         stage("Switch to Cloned Repo"){
             steps{
                 dir("DevelopmentProject"){
+                    sh "az login -u terraformuser@cameronriley.co.uk -p Manchester01!"
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                 }
