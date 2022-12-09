@@ -15,7 +15,7 @@ pipeline {
         stage("Switch to Cloned Repo"){
             steps{
                 dir("DevelopmentProject"){
-                    sh "az account --subscription AzureLearningSubscription"
+                    sh "az account list"
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                 }
