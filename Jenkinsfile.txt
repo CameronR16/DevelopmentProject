@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        Azure_Username     = credentials('terraformuser@cameronriley.co.uk')
+        Azure_Pass = credentials('Sake?4676!')
+    }
     stages {
         stage("Clean Up"){
             steps {
@@ -15,7 +19,7 @@ pipeline {
         stage("Switch to Cloned Repo"){
             steps{
                 dir("DevelopmentProject"){
-                    sh "az login -u terraformuser@cameronriley.co.uk -p Sake?4676!"
+                    sh "az login -u ${Azure_Username} -p ${Azure_Pass}"
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                 }
