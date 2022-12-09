@@ -7,6 +7,11 @@ pipeline {
             }
         }
 
+        stage("Checkout") {
+            steps{
+                sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
+            }
+        }
         stage("terraform init") {
 
             steps{
@@ -16,11 +21,14 @@ pipeline {
             }
 
         }
-        stage("Checkout") {
+        stage("Switch to Cloned Repo"){
             steps{
-                sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
+                dir("DevelopmentProject")
             }
+        
+        
         }
+        
 
         stage("terraform Action") {
 
