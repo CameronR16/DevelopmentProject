@@ -14,7 +14,8 @@ pipeline {
         }
         stage("Switch to Cloned Repo"){
             steps{
-                dir("DevelopmentProject")
+                dir("DevelopmentProject"){
+                }
             }
         
         
