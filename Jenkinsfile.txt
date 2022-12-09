@@ -15,12 +15,6 @@ pipeline {
         stage("Switch to Cloned Repo"){
             steps{
                 dir("DevelopmentProject"){
-                    sh """ export ARM_CLIENT_ID="ebbde193-cb48-4416-a0a7-650dde849175"
-                    export ARM_CLIENT_SECRET="R_Z8Q~Wkir6PLRDq.ZTiGfoKGBxLy4VUqFPlOcWu"
-                    export ARM_TENANT_ID="96784ed0-5313-43fe-b4ed-a42f7342a94f"
-                    export ARM_SUBSCRIPTION_ID="d8022583-374b-4d13-8f38-89aba275c0e9"
-                    """
-                    
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                 }
