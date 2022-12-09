@@ -6,11 +6,6 @@ pipeline {
                 deleteDir()
             }
         }
-        stage("Checkout") {
-            steps{
-                sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
-            }
-        }
 
         stage("terraform init") {
 
@@ -20,6 +15,11 @@ pipeline {
 
             }
 
+        }
+        stage("Checkout") {
+            steps{
+                sh "git clone https://github.com/CameronR16/DevelopmentProject.git"
+            }
         }
 
         stage("terraform Action") {
