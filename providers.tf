@@ -15,8 +15,5 @@ terraform {
 }
 provider "azurerm" {
   features {}
-  client_secret   = var.app_reg_secret
-  client_id       = var.appid
-  tenant_id       = var.tenant_id
-  subscription_id = var.sub
+  
 }
