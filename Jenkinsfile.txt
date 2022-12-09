@@ -15,7 +15,7 @@ pipeline {
         stage("Switch to Cloned Repo"){
             steps{
                 dir("DevelopmentProject"){
-                    sh "az login --service-prinicipal -u 'ebbde193-cb48-4416-a0a7-650dde849175' -p 'R_Z8Q~Wkir6PLRDq.ZTiGfoKGBxLy4VUqFPlOcWu' --tenant '96784ed0-5313-43fe-b4ed-a42f7342a94f'"
+                    sh "az login --service-principal -u 'ebbde193-cb48-4416-a0a7-650dde849175' -p 'R_Z8Q~Wkir6PLRDq.ZTiGfoKGBxLy4VUqFPlOcWu' --tenant '96784ed0-5313-43fe-b4ed-a42f7342a94f'"
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                 }
